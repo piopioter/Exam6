@@ -114,15 +114,6 @@ public class ImportService implements IImportService {
     private static LocalDate parseFlexibleDate(String date) {
         DateTimeFormatter dtfb = new DateTimeFormatterBuilder()
                 .appendPattern("yyyy-M-d")
-                .optionalStart()
-                .appendPattern("-d")
-                .optionalEnd()
-                .optionalStart()
-                .appendPattern("-MM-d")
-                .optionalEnd()
-                .optionalStart()
-                .appendPattern("-d")
-                .optionalEnd()
                 .toFormatter();
 
         return LocalDate.parse(date, dtfb);

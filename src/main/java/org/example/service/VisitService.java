@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 import java.util.Optional;
 @Service
-public class VisitService implements IModelService<Visit> {
+public class VisitService implements IEntityService<Visit> {
 
     private IGenericDao<Visit> genericDao;
 
@@ -16,8 +16,8 @@ public class VisitService implements IModelService<Visit> {
     }
 
     @Override
-    public void save(Visit visit) {
-        genericDao.save(Optional.ofNullable(visit)
+    public void save(Visit entity) {
+        genericDao.save(Optional.ofNullable(entity)
                 .filter(x -> Objects.isNull(x.getId()))
                 .orElseThrow());
 

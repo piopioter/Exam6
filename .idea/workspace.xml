@@ -155,7 +155,11 @@
       <workItem from="1692710421964" duration="1297000" />
       <workItem from="1692712712853" duration="9000" />
       <workItem from="1692743107299" duration="522000" />
-      <workItem from="1692787187680" duration="634000" />
+      <workItem from="1692787187680" duration="859000" />
+      <workItem from="1692789959015" duration="1490000" />
+      <workItem from="1692791780899" duration="1674000" />
+      <workItem from="1692793767949" duration="1468000" />
+      <workItem from="1692795693336" duration="345000" />
     </task>
     <servers />
   </component>
@@ -184,6 +188,11 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/ImportService.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class DoctorService implements IModelService<Doctor> {
+public class DoctorService implements IEntityService<Doctor> {
 
     private IGenericDao<Doctor> genericDao;
 
@@ -17,8 +17,8 @@ public class DoctorService implements IModelService<Doctor> {
     }
 
     @Override
-    public void save(Doctor doctor) {
-        genericDao.save(Optional.ofNullable(doctor)
+    public void save(Doctor entity) {
+        genericDao.save(Optional.ofNullable(entity)
                 .filter(x -> Objects.nonNull(x.getId()))
                 .orElseThrow());
 
