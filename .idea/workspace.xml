@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7ffd76bb-b790-451d-a404-e71653cf5329" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2U88GEA8PAa5zkVmUoJ6K1I5bxZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MedicalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.app.MedicalApp" />
+      <module name="Exam6" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MedicalApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ffd76bb-b790-451d-a404-e71653cf5329" name="Changes" comment="" />
+      <created>1692309751403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692309751403</updated>
+      <workItem from="1692309787117" duration="1376000" />
+      <workItem from="1692313228555" duration="624000" />
+      <workItem from="1692352614875" duration="1725000" />
+      <workItem from="1692354434193" duration="795000" />
+      <workItem from="1692355308349" duration="256000" />
+      <workItem from="1692356055241" duration="170000" />
+      <workItem from="1692356248575" duration="310000" />
+      <workItem from="1692356680330" duration="1330000" />
+      <workItem from="1692358064187" duration="990000" />
+      <workItem from="1692360178518" duration="1854000" />
+      <workItem from="1692362093344" duration="2267000" />
+      <workItem from="1692367996849" duration="1277000" />
+      <workItem from="1692369809425" duration="1821000" />
+      <workItem from="1692371923654" duration="1734000" />
+      <workItem from="1692373748131" duration="1764000" />
+      <workItem from="1692375563502" duration="2030000" />
+      <workItem from="1692380726159" duration="1782000" />
+      <workItem from="1692382539695" duration="497000" />
+      <workItem from="1692383305446" duration="995000" />
+      <workItem from="1692384358721" duration="667000" />
+      <workItem from="1692388239486" duration="35000" />
+      <workItem from="1692391171146" duration="1155000" />
+      <workItem from="1692392366338" duration="1366000" />
+      <workItem from="1692394476676" duration="979000" />
+      <workItem from="1692434884265" duration="1768000" />
+      <workItem from="1692437501267" duration="1435000" />
+      <workItem from="1692439428081" duration="336000" />
+      <workItem from="1692445051167" duration="1385000" />
+      <workItem from="1692446634177" duration="411000" />
+      <workItem from="1692451859123" duration="656000" />
+      <workItem from="1692453011461" duration="42000" />
+      <workItem from="1692453082425" duration="1311000" />
+      <workItem from="1692454770523" duration="314000" />
+      <workItem from="1692455258045" duration="1785000" />
+      <workItem from="1692457118264" duration="1287000" />
+      <workItem from="1692462111679" duration="901000" />
+      <workItem from="1692464261553" duration="379000" />
+      <workItem from="1692464926856" duration="1109000" />
+      <workItem from="1692466076240" duration="1780000" />
+      <workItem from="1692467889581" duration="1713000" />
+      <workItem from="1692469714490" duration="582000" />
+      <workItem from="1692477392430" duration="307000" />
+      <workItem from="1692532274275" duration="1438000" />
+      <workItem from="1692534111115" duration="1140000" />
+      <workItem from="1692535940776" duration="1745000" />
+      <workItem from="1692538363085" duration="1546000" />
+      <workItem from="1692541771529" duration="1228000" />
+      <workItem from="1692544470439" duration="1758000" />
+      <workItem from="1692546335718" duration="1778000" />
+      <workItem from="1692548150284" duration="1508000" />
+      <workItem from="1692549974473" duration="1926000" />
+      <workItem from="1692551985695" duration="1770000" />
+      <workItem from="1692553809304" duration="1736000" />
+      <workItem from="1692555623034" duration="768000" />
+      <workItem from="1692561962081" duration="578000" />
+      <workItem from="1692564117666" duration="794000" />
+      <workItem from="1692614096265" duration="1160000" />
+      <workItem from="1692615916622" duration="1863000" />
+      <workItem from="1692617872798" duration="1759000" />
+      <workItem from="1692619692719" duration="1664000" />
+      <workItem from="1692622169420" duration="2929000" />
+      <workItem from="1692626735982" duration="121000" />
+      <workItem from="1692626884712" duration="1177000" />
+      <workItem from="1692631606309" duration="102000" />
+      <workItem from="1692631735663" duration="1575000" />
+      <workItem from="1692633421472" duration="660000" />
+      <workItem from="1692648122717" duration="655000" />
+      <workItem from="1692651127889" duration="830000" />
+      <workItem from="1692657630512" duration="615000" />
+      <workItem from="1692658716692" duration="1041000" />
+      <workItem from="1692710421964" duration="1297000" />
+      <workItem from="1692712712853" duration="9000" />
+      <workItem from="1692743107299" duration="522000" />
+      <workItem from="1692787187680" duration="634000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/SimpleMedicalService.java</url>
+          <line>49</line>
+          <properties class="org.example.service.SimpleMedicalService" method="getPatientWithVisit">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
