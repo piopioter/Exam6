@@ -17,71 +17,54 @@ import java.util.Map;
 public class SimpleMedicalService {
 
     private DataSource dataSource;
+    private IEntityService<Patient> entityService;
 
-    public SimpleMedicalService(DataSource dataSource) {
+    public SimpleMedicalService(DataSource dataSource, IEntityService<Patient> entityService) {
         this.dataSource = dataSource;
+        this.entityService = entityService;
     }
 
-    public LocalDate findNextAvailableVisit(Long id, LocalDate date) {
+    public LocalDate findNextAvailableVisit(Long doctorId, LocalDate date) {
+        if (doctorId == null)
+            throw new IllegalArgumentException("Id jest nullem");
+        if(date == null)
+            throw new IllegalArgumentException("Data jest  nullem ");
+
         LocalDate availableDate = null;
         try (
                 Connection conn = dataSource.getConnection();
-                PreparedStatement prep = conn.prepareStatement("SELECT MIN(visit_date) AS availableDay FROM" +
-                        " Visit WHERE doctor_id = ? AND visit_date > ?")
+                PreparedStatement prep = conn.prepareStatement("SELECT MIN(visit_date) AS availableDay  FROM" +
+                        " Visit WHERE doctor_id = ? AND visit_date > ?  ")
         ) {
-            prep.setLong(1, id);
+            prep.setLong(1, doctorId);
             prep.setDate(2, Date.valueOf(date));
+
             try (
                     ResultSet resultSet = prep.executeQuery()
             ) {
                 while (resultSet.next())
                     availableDate = resultSet.getDate("availableDay").toLocalDate();
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
         return availableDate;
     }
 
 
-    public Map<Patient, List<Visit>> getPatientWithVisit(Long id) {
-        Map<Patient, List<Visit>> visits = new HashMap<>();
-        List<Visit> visitList = new ArrayList<>();
+    public Map<Patient, List<Visit>> getPatientWithVisits(Long patientId) {
 
-        try (
-                Connection conn = dataSource.getConnection();
-                PreparedStatement prep = conn.prepareStatement(" SELECT Patient.* , Visit.* FROM Patient " +
-                        "LEFT JOIN Visit ON Patient.id = Visit.patient_id WHERE Patient.id = ?");
-        ) {
-            prep.setLong(1, id);
-            try (
-                    ResultSet resultSet = prep.executeQuery()
-            ) {
-                while (resultSet.next()) {
-                    Patient patient = new Patient(
-                            resultSet.getLong("id"),
-                            resultSet.getString("last_name"),
-                            resultSet.getString("name"),
-                            resultSet.getString("pesel"),
-                            resultSet.getDate("birthday").toLocalDate());
-                    visitList.add(new Visit(
-                                    resultSet.getLong("doctor_id"),
-                                    resultSet.getLong("patient_id"),
-                                    resultSet.getDate("visit_date").toLocalDate()
-                            )
-                    );
-                    visits.put(patient, visitList);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        if (patientId == null)
+            throw new IllegalArgumentException("Id jest nullem");
 
-        return visits;
+        HashMap<Patient, List<Visit>> visitsMap = new HashMap<>();
 
+        Patient patient = entityService.get(patientId);
+        List<Visit> visits = patient.getVisits();
+        visitsMap.put(patient, visits);
+
+
+        return visitsMap;
     }
 
 

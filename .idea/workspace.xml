@@ -36,7 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="DatabaseDriversLRU" value="h2&#10;mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -57,7 +57,7 @@
     <configuration name="MedicalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.app.MedicalApp" />
       <module name="Exam6" />
-      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=test" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=prod" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.app.*" />
@@ -159,7 +159,39 @@
       <workItem from="1692789959015" duration="1490000" />
       <workItem from="1692791780899" duration="1674000" />
       <workItem from="1692793767949" duration="1468000" />
-      <workItem from="1692795693336" duration="345000" />
+      <workItem from="1692795693336" duration="1700000" />
+      <workItem from="1692803448504" duration="57000" />
+      <workItem from="1692804170789" duration="1029000" />
+      <workItem from="1692805260162" duration="2009000" />
+      <workItem from="1692807353558" duration="970000" />
+      <workItem from="1692808376963" duration="598000" />
+      <workItem from="1692809655279" duration="1664000" />
+      <workItem from="1692813438444" duration="1331000" />
+      <workItem from="1692815838506" duration="101000" />
+      <workItem from="1692816080313" duration="35000" />
+      <workItem from="1692816154337" duration="596000" />
+      <workItem from="1692820388988" duration="2469000" />
+      <workItem from="1692823333248" duration="1293000" />
+      <workItem from="1692826136492" duration="1808000" />
+      <workItem from="1692828986104" duration="1969000" />
+      <workItem from="1692833080025" duration="1773000" />
+      <workItem from="1692834907809" duration="307000" />
+      <workItem from="1692876706822" duration="1605000" />
+      <workItem from="1692878565557" duration="1833000" />
+      <workItem from="1692880523223" duration="1928000" />
+      <workItem from="1692882527698" duration="4325000" />
+      <workItem from="1692889584949" duration="1683000" />
+      <workItem from="1692891395580" duration="1704000" />
+      <workItem from="1692893215422" duration="1129000" />
+      <workItem from="1692895083202" duration="1152000" />
+      <workItem from="1692898732968" duration="1137000" />
+      <workItem from="1692900548919" duration="1671000" />
+      <workItem from="1692903466687" duration="1554000" />
+      <workItem from="1692905426916" duration="1789000" />
+      <workItem from="1692907426555" duration="1525000" />
+      <workItem from="1692911555366" duration="1800000" />
+      <workItem from="1692913556283" duration="1202000" />
+      <workItem from="1692918120638" duration="1275000" />
     </task>
     <servers />
   </component>
@@ -179,22 +211,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/SimpleMedicalService.java</url>
-          <line>49</line>
-          <properties class="org.example.service.SimpleMedicalService" method="getPatientWithVisit">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/ImportService.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.commons.dbcp2.DelegatingResultSet" memberName="traceList" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

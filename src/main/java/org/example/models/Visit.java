@@ -1,6 +1,7 @@
 package org.example.models;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -14,21 +15,24 @@ public class Visit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "doctor_id")
-    private Long doctorId;
-    @Column(name = "patient_id")
-    private Long patientId;
+    @ManyToOne
+    private Patient patient;
+    @ManyToOne
+    private Doctor doctor;
     @Column(name = "visit_date")
     private LocalDate visitDate;
+
 
     public Visit() {
     }
 
-    public Visit(Long doctorId, Long patientId, LocalDate visitDate) {
-        this.doctorId = doctorId;
-        this.patientId = patientId;
+    public Visit(Patient patient, Doctor doctor, LocalDate visitDate) {
+        this.patient = patient;
+        this.doctor = doctor;
         this.visitDate = visitDate;
     }
+
+
 
     public Long getId() {
         return id;
@@ -36,22 +40,6 @@ public class Visit implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(Long doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    public Long getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
     }
 
     public LocalDate getVisitDate() {
@@ -62,26 +50,42 @@ public class Visit implements Serializable {
         this.visitDate = visitDate;
     }
 
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Visit visit = (Visit) o;
-        return Objects.equals(id, visit.id) && Objects.equals(doctorId, visit.doctorId) && Objects.equals(patientId, visit.patientId) && Objects.equals(visitDate, visit.visitDate);
+        return Objects.equals(id, visit.id) && Objects.equals(visitDate, visit.visitDate) && Objects.equals(patient, visit.patient) && Objects.equals(doctor, visit.doctor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, doctorId, patientId, visitDate);
+        return Objects.hash(id, visitDate, patient, doctor);
     }
 
     @Override
     public String toString() {
         return "Visit{" +
                 "id=" + id +
-                ", doctorId=" + doctorId +
-                ", patientId=" + patientId +
                 ", visitDate=" + visitDate +
+                ", patient=" + patient +
+                ", doctor=" + doctor +
                 '}';
     }
 }

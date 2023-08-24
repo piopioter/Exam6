@@ -20,8 +20,16 @@ public class PatientService implements IEntityService<Patient> {
     public void save(Patient entity) {
         genericDao.save(Optional.ofNullable(entity)
                 .filter(x -> Objects.nonNull(x.getId()))
-                .orElseThrow());
+                .orElseThrow(() -> new RuntimeException("Wrong entity!")));
 
 
     }
+
+    @Override
+    public Patient get(Long id) {
+        return genericDao.get(Patient.class, Optional.ofNullable(id)
+                .orElseThrow(() -> new RuntimeException("Id jest nullem")));
+
+    }
+
 }

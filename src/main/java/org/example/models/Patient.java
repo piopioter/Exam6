@@ -1,12 +1,13 @@
 package org.example.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 @Entity
 public class Patient implements Serializable {
 
@@ -19,16 +20,20 @@ public class Patient implements Serializable {
     private String name;
     private String pesel;
     private LocalDate birthday;
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
+    private List<Visit> visits;
 
     public Patient() {
     }
 
-    public Patient(Long id, String lastName, String name, String pesel, LocalDate birthday) {
+
+    public Patient(Long id, String lastName, String name, String pesel, LocalDate birthday, List<Visit> visits) {
         this.id = id;
         this.lastName = lastName;
         this.name = name;
         this.pesel = pesel;
         this.birthday = birthday;
+        this.visits = visits;
     }
 
     public Long getId() {
@@ -69,6 +74,15 @@ public class Patient implements Serializable {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
     }
 
     @Override

@@ -3,11 +3,9 @@ package org.example.service;
 import org.example.models.Doctor;
 import org.example.models.Patient;
 import org.example.models.Visit;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +13,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.ArrayList;
 
 @Service
 @PropertySources({
@@ -59,7 +58,7 @@ public class ImportService implements IImportService {
                 String nip = properties[5];
                 String pesel = properties[6];
 
-                doctorService.save(new Doctor(id, lastName, name, speciality, birthday, nip, pesel));
+                doctorService.save(new Doctor(id, lastName, name, speciality, birthday, nip, pesel, new ArrayList<>()));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +81,7 @@ public class ImportService implements IImportService {
                 String pesel = properties[3];
                 LocalDate date = parseFlexibleDate(properties[4]);
 
-                patientService.save(new Patient(id, lastName, name, pesel, date));
+                patientService.save(new Patient(id, lastName, name, pesel, date, new ArrayList<>()));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -100,11 +99,12 @@ public class ImportService implements IImportService {
                 if (line.startsWith("Id_lekarza"))
                     continue;
                 String[] properties = line.split("\t");
-                Long doctorId = Long.parseLong(properties[0]);
-                Long patientId = Long.parseLong(properties[1]);
+                Doctor doctor = doctorService.get(Long.parseLong(properties[0]));
+                Patient patient = patientService.get(Long.parseLong(properties[1]));
                 LocalDate visitDate = parseFlexibleDate(properties[2]);
 
-                visitService.save(new Visit(doctorId, patientId, visitDate));
+                visitService.save(new Visit(patient, doctor, visitDate));
+
             }
         } catch (IOException e) {
             e.printStackTrace();

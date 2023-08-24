@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 import java.util.Optional;
+
 @Service
 public class VisitService implements IEntityService<Visit> {
 
@@ -19,7 +20,13 @@ public class VisitService implements IEntityService<Visit> {
     public void save(Visit entity) {
         genericDao.save(Optional.ofNullable(entity)
                 .filter(x -> Objects.isNull(x.getId()))
-                .orElseThrow());
+                .orElseThrow(() -> new RuntimeException("Wrong entity")));
 
+    }
+
+    @Override
+    public Visit get(Long id) {
+        return genericDao.get(Visit.class, Optional.ofNullable(id)
+                .orElseThrow(() -> new RuntimeException("Id jest nullem")));
     }
 }

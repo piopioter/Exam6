@@ -1,12 +1,13 @@
 package org.example.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
+
 @Entity
 public class Doctor implements Serializable {
 
@@ -21,11 +22,14 @@ public class Doctor implements Serializable {
     private LocalDate birthday;
     private String nip;
     private String pesel;
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY)
+    private List<Visit> visits;
 
     public Doctor() {
     }
 
-    public Doctor(Long id, String name, String lastName, String speciality, LocalDate birthday, String nip, String pesel) {
+
+    public Doctor(Long id, String name, String lastName, String speciality, LocalDate birthday, String nip, String pesel, List<Visit> visits) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -33,6 +37,7 @@ public class Doctor implements Serializable {
         this.birthday = birthday;
         this.nip = nip;
         this.pesel = pesel;
+        this.visits = visits;
     }
 
     public Long getId() {
@@ -90,6 +95,14 @@ public class Doctor implements Serializable {
     public void setPesel(String pesel) {
         this.pesel = pesel;
     }
+
+//    public List<Visit> getVisits() {
+//        return visits;
+//    }
+//
+//    public void setVisits(List<Visit> visits) {
+//        this.visits = visits;
+//    }
 
     @Override
     public boolean equals(Object o) {

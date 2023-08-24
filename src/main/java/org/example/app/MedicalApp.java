@@ -23,10 +23,11 @@ public class MedicalApp {
         imp.importVisitsDataFromFile();
 
         SimpleMedicalService bean = ctx.getBean(SimpleMedicalService.class);
-        Map<Patient, List<Visit>> patientWithVisit = bean.getPatientWithVisit(272L);
-        LocalDate nextAvailableVisit = bean.findNextAvailableVisit(25L, LocalDate.parse("2006-04-07"));
+        Map<Patient, List<Visit>> patientWithVisits = bean.getPatientWithVisits(272L);
+        LocalDate nextAvailableVisit = bean.findNextAvailableVisit(23L, LocalDate.parse("2006-04-07"));
         System.out.println(nextAvailableVisit);
-        System.out.println(patientWithVisit);
+        System.out.println(patientWithVisits);
+
 
     }
 }

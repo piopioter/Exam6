@@ -40,4 +40,5 @@ public class JpaConfig {
         return data;
     }
 
+
 }
